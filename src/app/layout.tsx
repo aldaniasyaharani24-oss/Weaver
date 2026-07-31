@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "@/providers";
-import { GlowingCursor } from "@/components/common/glowing-cursor";
 import "@/styles/globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -32,8 +31,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${plusJakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" style={{ cursor: "none" }}>
-        <GlowingCursor />
+      <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
       </body>
     </html>

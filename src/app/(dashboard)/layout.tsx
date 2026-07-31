@@ -6,7 +6,7 @@ import { getUserWorkspaces } from "@/features/workspace/services/workspace.servi
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import { WebCanvas } from "@/components/landing/web-canvas";
 import { WeaverLogo } from "@/components/common/weaver-logo";
-import { DashboardSidebar } from "@/features/auth/components/dashboard-sidebar";
+import { SidebarWrapper } from "@/features/auth/components/sidebar-wrapper";
 import { MobileBottomNav } from "@/features/auth/components/mobile-bottom-nav";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -36,15 +36,15 @@ export default async function DashboardLayout({ children }: { children: React.Re
       {/* ── Animated background ── */}
       <WebCanvas />
 
-      {/* ── Sidebar kiri ── */}
-      <DashboardSidebar
+      {/* ── Sidebar kiri — hanya di workspace/board ── */}
+      <SidebarWrapper
         workspaces={workspaceList}
         displayName={shortName}
         initials={initials}
       />
 
       {/* ── Kanan: header + main + footer ── */}
-      <div className="flex-1 flex flex-col min-w-0 relative" style={{ zIndex: 20 }}>
+      <div className="flex-1 flex flex-col min-w-0 relative overflow-hidden" style={{ zIndex: 20 }}>
 
         {/* Top Header */}
         <header className="sticky top-0 z-50 h-14 flex items-center justify-between px-4 dash-header">
@@ -56,7 +56,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         </header>
 
         {/* Main */}
-        <main className="flex-1 overflow-y-auto pb-16 md:pb-16">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden pb-20 md:pb-16">
           {children}
         </main>
 

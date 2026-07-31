@@ -132,19 +132,6 @@ export default async function WorkspaceKanbanPage({ params }: Props) {
               </div>
             </div>
           </div>
-
-          {/* Stat cards */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            {stats.map((s) => (
-              <div key={s.label} className="kanban-stat-card px-4 py-3 rounded-xl text-center min-w-[68px]">
-                <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <span className="text-base">{s.icon}</span>
-                  <span className="text-xl font-bold kanban-stat-value">{s.value}</span>
-                </div>
-                <p className="text-[11px] kanban-stat-label">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <WorkspaceTabNav workspaceId={id} />
