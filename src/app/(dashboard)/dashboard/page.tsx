@@ -125,7 +125,7 @@ export default async function DashboardPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-bold db-heading">Proyek Aktif</h2>
               <Link href="/workspaces" className="text-xs db-muted hover:opacity-70 transition-opacity">
-                Lihat semua →
+                Lihat semua
               </Link>
             </div>
 
@@ -163,9 +163,6 @@ export default async function DashboardPage() {
                           <h3 className="font-semibold text-sm truncate db-heading group-hover:opacity-75 transition-opacity">
                             {ws.name}
                           </h3>
-                          <svg className="size-3.5 db-muted shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                          </svg>
                         </div>
                         <p className="text-xs db-muted truncate">
                           {ws.description || "Klik untuk membuka proyek"}
