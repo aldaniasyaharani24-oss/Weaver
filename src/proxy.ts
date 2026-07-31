@@ -1,28 +1,51 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "@/lib/supabase/middleware";
+import { createServerClient } from "@supabase/ssr";
+import { NextResponse, type NextRequest } from "next/server";
 
 const protectedRoutes = ["/dashboard", "/board", "/workspaces", "/settings"];
 const authRoutes = ["/login", "/register"];
 
 export async function proxy(request: NextRequest) {
-  const { supabase, supabaseResponse } = await updateSession(request);
+  let supabaseResponse = NextResponse.next({ request });
 
-  const { data: { user } } = await supabase.auth.getUser();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value),
+          );
+          supabaseResponse = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options),
+          );
+        },
+      },
+    },
+  );
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   const pathname = request.nextUrl.pathname;
 
-  // Jika user belum login dan akses protected route → redirect ke login
+  // Belum login tapi akses protected route → redirect ke /login
   if (!user && protectedRoutes.some((route) => pathname.startsWith(route))) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
-    return Response.redirect(url);
+    return NextResponse.redirect(url);
   }
 
-  // Jika user sudah login dan akses auth route → redirect ke dashboard
+  // Sudah login tapi akses auth route → redirect ke /dashboard
   if (user && authRoutes.some((route) => pathname.startsWith(route))) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
-    return Response.redirect(url);
+    return NextResponse.redirect(url);
   }
 
   return supabaseResponse;
@@ -30,13 +53,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public (public files)
-     */
     "/((?!_next/static|_next/image|favicon.ico|public|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
