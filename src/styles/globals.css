@@ -1,0 +1,1608 @@
+﻿@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   SPIDER-MAN DARK THEME â€” Color Tokens
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans:    var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono:    ui-monospace, monospace;
+
+  /* Spider-Man Palette */
+  --color-sm-red:      #BF0413;
+  --color-sm-navy:     #294273;
+  --color-sm-darkred:  #8C0303;
+  --color-sm-crimson:  #590202;
+  --color-sm-light:    #F2F2F2;
+
+  /* Mapped to design system */
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-destructive:        var(--destructive);
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-ring:               var(--ring);
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Legacy tokens â†’ remapped to Spider-Man */
+  --color-basecamp-bg:         #1a0808;
+  --color-basecamp-card:       #1f0b0b;
+  --color-basecamp-card-hover: #2a0d0d;
+  --color-basecamp-border:     rgba(191, 4, 19, 0.2);
+  --color-basecamp-green:      #BF0413;
+
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* â”€â”€â”€ Dark mode root â€” Spider-Man â”€â”€â”€ */
+:root {
+  --background:            #1a0808;
+  --foreground:            #F2F2F2;
+  --card:                  #1f0b0b;
+  --card-foreground:       #F2F2F2;
+  --popover:               #1f0b0b;
+  --popover-foreground:    #F2F2F2;
+  --primary:               #BF0413;
+  --primary-foreground:    #ffffff;
+  --secondary:             #294273;
+  --secondary-foreground:  #F2F2F2;
+  --muted:                 #2a0d0d;
+  --muted-foreground:      #a89090;
+  --accent:                #8C0303;
+  --accent-foreground:     #F2F2F2;
+  --destructive:           #ff4b4b;
+  --border:                rgba(191, 4, 19, 0.2);
+  --input:                 rgba(191, 4, 19, 0.12);
+  --ring:                  #BF0413;
+  --radius:                0.625rem;
+
+  --chart-1: #BF0413;
+  --chart-2: #8C0303;
+  --chart-3: #294273;
+  --chart-4: #590202;
+  --chart-5: #8C0303;
+
+  --sidebar:                  #120505;
+  --sidebar-foreground:       #F2F2F2;
+  --sidebar-primary:          #BF0413;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:           #2a0d0d;
+  --sidebar-accent-foreground: #F2F2F2;
+  --sidebar-border:           rgba(191, 4, 19, 0.18);
+  --sidebar-ring:             #BF0413;
+}
+
+/* â”€â”€â”€ Dark class â€” Spider-Man â”€â”€â”€ */
+.dark {
+  --background:            #1a0808;
+  --foreground:            #F2F2F2;
+  --card:                  #1f0b0b;
+  --card-foreground:       #F2F2F2;
+  --popover:               #1f0b0b;
+  --popover-foreground:    #F2F2F2;
+  --primary:               #BF0413;
+  --primary-foreground:    #ffffff;
+  --secondary:             #294273;
+  --secondary-foreground:  #F2F2F2;
+  --muted:                 #2a0d0d;
+  --muted-foreground:      #a89090;
+  --accent:                #8C0303;
+  --accent-foreground:     #F2F2F2;
+  --destructive:           #ff4b4b;
+  --border:                rgba(191, 4, 19, 0.2);
+  --input:                 rgba(191, 4, 19, 0.12);
+  --ring:                  #BF0413;
+  --sidebar:               #120505;
+  --sidebar-foreground:    #F2F2F2;
+  --sidebar-primary:       #BF0413;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:        #2a0d0d;
+  --sidebar-accent-foreground: #F2F2F2;
+  --sidebar-border:        rgba(191, 4, 19, 0.18);
+  --sidebar-ring:          #BF0413;
+}
+
+/* â”€â”€â”€ LIGHT theme â€” Spider-Woman Pink & White â”€â”€â”€ */
+:root:not(.dark) {
+  --background:            #fff0f6;
+  --foreground:            #5c0a30;
+  --card:                  #ffffff;
+  --card-foreground:       #5c0a30;
+  --popover:               #ffffff;
+  --popover-foreground:    #5c0a30;
+  --primary:               #E21C70;
+  --primary-foreground:    #ffffff;
+  --secondary:             #ffe4f0;
+  --secondary-foreground:  #be185d;
+  --muted:                 #fce7f3;
+  --muted-foreground:      #9d174d;
+  --accent:                #fbcfe8;
+  --accent-foreground:     #9d174d;
+  --destructive:           #ef4444;
+  --border:                rgba(226, 28, 112, 0.18);
+  --input:                 rgba(226, 28, 112, 0.1);
+  --ring:                  #E21C70;
+  --radius:                0.625rem;
+  --chart-1: #E21C70;
+  --chart-2: #F966AB;
+  --chart-3: #AE0849;
+  --chart-4: #c026d3;
+  --chart-5: #7c3aed;
+  --sidebar:                  #fce7f3;
+  --sidebar-foreground:       #5c0a30;
+  --sidebar-primary:          #E21C70;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:           #fbcfe8;
+  --sidebar-accent-foreground: #9d174d;
+  --sidebar-border:           rgba(226, 28, 112, 0.15);
+  --sidebar-ring:             #E21C70;
+  --color-basecamp-bg:         #fff0f6;
+  --color-basecamp-card:       #ffffff;
+  --color-basecamp-card-hover: #fff5f9;
+  --color-basecamp-border:     rgba(226, 28, 112, 0.15);
+  --color-basecamp-green:      #E21C70;
+}
+
+/* â”€â”€ Body: putih bersih dengan gradient pink lembut â”€â”€ */
+:root:not(.dark) body {
+  background: linear-gradient(160deg, #fff9fc 0%, #ffe4f0 40%, #fce7f3 100%) !important;
+  color: #5c0a30 !important;
+}
+
+/* â”€â”€ Main content area â”€â”€ */
+:root:not(.dark) main {
+  background: linear-gradient(160deg, #fff9fc 0%, #ffe4f0 40%, #fce7f3 100%) !important;
+}
+
+/* â”€â”€ Override hardcoded dark backgrounds â†’ putih â”€â”€ */
+:root:not(.dark) [class*="bg-\\[\\#191B37\\]"],
+:root:not(.dark) [class*="bg-\\[\\#14163a\\]"],
+:root:not(.dark) [class*="bg-\\[\\#1a1a2e\\]"],
+:root:not(.dark) [class*="bg-\\[#141f28\\]"] {
+  background: linear-gradient(160deg, #fff9fc, #ffe4f0, #fce7f3) !important;
+}
+
+/* Override white cards â€” tetap putih tapi ada border pink */
+:root:not(.dark) [class*="bg-white"] {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 28, 112, 0.12) !important;
+}
+
+/* â”€â”€ Teks â”€â”€ */
+:root:not(.dark) [class*="text-gray-900"],
+:root:not(.dark) [class*="text-gray-800"],
+:root:not(.dark) [class*="text-gray-700"] { color: #5c0a30 !important; }
+:root:not(.dark) [class*="text-gray-600"],
+:root:not(.dark) [class*="text-gray-500"] { color: #9d174d !important; }
+:root:not(.dark) [class*="text-gray-400"] { color: #be185d80 !important; }
+
+/* â”€â”€ Text putih (sidebar dll) tetap putih di elemen dark â”€â”€ */
+:root:not(.dark) [style*="color: #E9CFE8"],
+:root:not(.dark) [style*="color: rgba(233,207,232"] { color: #5c0a30 !important; }
+
+/* â”€â”€ Border gray â†’ pink lembut â”€â”€ */
+:root:not(.dark) [class*="border-gray-200"],
+:root:not(.dark) [class*="border-gray-100"] { border-color: rgba(226, 28, 112, 0.15) !important; }
+
+/* â”€â”€ Scrollbar pink â”€â”€ */
+:root:not(.dark) ::-webkit-scrollbar-track { background: #fff0f6; }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: rgba(226,28,112,0.3); }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(226,28,112,0.5); }
+
+/* â”€â”€ Sidebar: pink gradient cerah â”€â”€ */
+:root:not(.dark) aside {
+  background: linear-gradient(180deg, #fce7f3 0%, #fbcfe8 100%) !important;
+}
+/* Sidebar text dark */
+:root:not(.dark) aside a,
+:root:not(.dark) aside span,
+:root:not(.dark) aside p,
+:root:not(.dark) aside button { color: #9d174d !important; }
+:root:not(.dark) aside a:hover { color: #E21C70 !important; }
+
+/* â”€â”€ Header: putih bersih â”€â”€ */
+:root:not(.dark) header {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(226, 28, 112, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+}
+:root:not(.dark) header span,
+:root:not(.dark) header a,
+:root:not(.dark) header button { color: #9d174d !important; }
+
+/* â”€â”€ Bottom footer â”€â”€ */
+:root:not(.dark) footer.fixed {
+  background: rgba(252, 231, 243, 0.97) !important;
+  border-top: 1px solid rgba(226, 28, 112, 0.12) !important;
+}
+:root:not(.dark) footer.fixed span,
+:root:not(.dark) footer.fixed a,
+:root:not(.dark) footer.fixed button { color: #9d174d !important; }
+
+/* â”€â”€ Cards: putih dengan shadow pink lembut â”€â”€ */
+:root:not(.dark) .card-hover {
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 28, 112, 0.15) !important;
+  box-shadow: 0 2px 12px rgba(226, 28, 112, 0.06) !important;
+}
+:root:not(.dark) .card-hover:hover {
+  border-color: rgba(226, 28, 112, 0.35) !important;
+  box-shadow: 0 8px 28px rgba(226, 28, 112, 0.14), 0 0 0 1px rgba(226, 28, 112, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* â”€â”€ Neon border â†’ pink soft â”€â”€ */
+:root:not(.dark) .neon-border {
+  border-color: rgba(226, 28, 112, 0.25) !important;
+  box-shadow: 0 0 10px rgba(226, 28, 112, 0.08) !important;
+}
+
+/* â”€â”€ Workspace page header bg â”€â”€ */
+:root:not(.dark) .border-b { border-color: rgba(226, 28, 112, 0.12) !important; }
+
+/* â”€â”€ Dark rgba card backgrounds â†’ putih translucent â”€â”€ */
+:root:not(.dark) [style*="rgba(30,32,72"],
+:root:not(.dark) [style*="rgba(30, 32, 72"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(226, 28, 112, 0.15) !important;
+}
+:root:not(.dark) [style*="rgba(20, 22, 58"],
+:root:not(.dark) [style*="rgba(20,22,58"] {
+  background: rgba(255, 240, 246, 0.97) !important;
+}
+
+/* â”€â”€ Buttons: tetap pink bold â”€â”€ */
+:root:not(.dark) button[style*="linear-gradient(135deg, #AE0849"],
+:root:not(.dark) a[style*="linear-gradient(135deg, #AE0849"] {
+  background: linear-gradient(135deg, #E21C70, #F966AB) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(226, 28, 112, 0.3) !important;
+}
+
+/* â”€â”€ Spider web pattern lebih terang â”€â”€ */
+:root:not(.dark) .spider-web-bg {
+  background-image:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0px, transparent 60px, rgba(226,28,112,0.04) 60px, rgba(226,28,112,0.04) 61px),
+    repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(226,28,112,0.025) 80px, rgba(226,28,112,0.025) 81px),
+    repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(226,28,112,0.025) 80px, rgba(226,28,112,0.025) 81px) !important;
+}
+
+/* â”€â”€ Tab nav (workspace) di light mode â”€â”€ */
+:root:not(.dark) nav a[style],
+:root:not(.dark) [class*="text-white\\/70"] { color: #9d174d !important; }
+
+/* â”€â”€ Input fields â”€â”€ */
+:root:not(.dark) input, :root:not(.dark) textarea, :root:not(.dark) select {
+  background-color: #ffffff !important;
+  color: #5c0a30 !important;
+  border-color: rgba(226, 28, 112, 0.2) !important;
+}
+:root:not(.dark) input::placeholder,
+:root:not(.dark) textarea::placeholder { color: rgba(157, 23, 77, 0.5) !important; }
+
+/* â”€â”€ Smooth transitions â”€â”€ */
+html { transition: background-color 0.4s ease, color 0.4s ease; }
+*, *::before, *::after { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* â”€â”€â”€ Spider-Web Background Pattern â”€â”€â”€ */
+@layer utilities {
+  .spider-web-bg {
+    background-image:
+      /* Radial web lines */
+      repeating-radial-gradient(
+        circle at 50% 50%,
+        transparent 0px,
+        transparent 60px,
+        rgba(249, 102, 171, 0.03) 60px,
+        rgba(249, 102, 171, 0.03) 61px
+      ),
+      /* Diagonal lines simulating web threads */
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 80px,
+        rgba(249, 102, 171, 0.025) 80px,
+        rgba(249, 102, 171, 0.025) 81px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 80px,
+        rgba(249, 102, 171, 0.025) 80px,
+        rgba(249, 102, 171, 0.025) 81px
+      );
+  }
+
+  /* Neon glow border */
+  .neon-border {
+    border: 1px solid rgba(249, 102, 171, 0.3);
+    box-shadow: 0 0 8px rgba(249, 102, 171, 0.1), inset 0 0 8px rgba(249, 102, 171, 0.05);
+  }
+
+  /* Pink glow text */
+  .glow-text {
+    text-shadow: 0 0 20px rgba(249, 102, 171, 0.6), 0 0 40px rgba(226, 28, 112, 0.3);
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: rgba(30, 32, 72, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(249, 102, 171, 0.12);
+  }
+}
+
+/* â”€â”€â”€ Keyframe Animations â”€â”€â”€ */
+@keyframes web-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(249, 102, 171, 0.2); }
+  50%       { box-shadow: 0 0 20px rgba(249, 102, 171, 0.5), 0 0 40px rgba(226, 28, 112, 0.2); }
+}
+
+@keyframes web-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pink-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+
+@keyframes thread-trace {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0%   { transform: scale(0.92) translateY(6px); opacity: 0; }
+  60%  { transform: scale(1.02) translateY(-2px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.8; }
+  94%       { opacity: 1; }
+  96%       { opacity: 0.9; }
+  97%       { opacity: 1; }
+}
+
+/* â”€â”€â”€ Global Animation Classes â”€â”€â”€ */
+.animate-web-pulse  { animation: web-pulse 2.5s ease-in-out infinite; }
+.animate-pink-float { animation: pink-float 3s ease-in-out infinite; }
+.animate-thread     { animation: thread-trace 0.4s ease-out forwards; }
+.animate-bounce-in  { animation: bounce-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-neon       { animation: neon-flicker 8s ease-in-out infinite; }
+
+/* â”€â”€â”€ Button Override â€” Primary glow â”€â”€â”€ */
+button[type="submit"],
+.btn-primary {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(226, 28, 112, 0.4), 0 0 40px rgba(249, 102, 171, 0.15);
+}
+
+button[type="submit"]:active,
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* â”€â”€â”€ Link hover effect â”€â”€â”€ */
+a {
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+/* â”€â”€â”€ Input focus override â”€â”€â”€ */
+input:focus, textarea:focus, select:focus {
+  border-color: rgba(249, 102, 171, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(249, 102, 171, 0.1) !important;
+  outline: none !important;
+}
+
+/* â”€â”€â”€ Scrollbar â”€â”€â”€ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #191B37;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 102, 171, 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 102, 171, 0.5);
+}
+
+/* â”€â”€â”€ Selection â”€â”€â”€ */
+::selection {
+  background: rgba(226, 28, 112, 0.35);
+  color: #E9CFE8;
+}
+
+/* â”€â”€â”€ Page transition â”€â”€â”€ */
+main {
+  animation: bounce-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* â”€â”€â”€ Divider / separator glow â”€â”€â”€ */
+hr, .separator {
+  border-color: rgba(249, 102, 171, 0.1);
+}
+
+/* â”€â”€â”€ Card hover spring effect â”€â”€â”€ */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              border-color 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: 0 8px 32px rgba(174, 8, 73, 0.2), 0 0 0 1px rgba(249, 102, 171, 0.2);
+}
+
+/* â”€â”€â”€ Neon active nav indicator â”€â”€â”€ */
+.nav-active {
+  background: rgba(226, 28, 112, 0.2) !important;
+  border-color: rgba(249, 102, 171, 0.4) !important;
+  box-shadow: 0 0 12px rgba(226, 28, 112, 0.15);
+  color: #F966AB !important;
+}
+
+/* â”€â”€â”€ Progress bar pink gradient â”€â”€â”€ */
+.progress-glow {
+  box-shadow: 0 0 6px rgba(249, 102, 171, 0.5);
+}
+
+/* â”€â”€â”€ Badge glow â”€â”€â”€ */
+.badge-pink {
+  background: rgba(226, 28, 112, 0.2);
+  border: 1px solid rgba(249, 102, 171, 0.3);
+  color: #F966AB;
+  box-shadow: 0 0 8px rgba(249, 102, 171, 0.1);
+}
+
+/* â”€â”€â”€ Toast override (sonner) â”€â”€â”€ */
+[data-sonner-toaster] {
+  --normal-bg: #1e2048 !important;
+  --normal-border: rgba(249, 102, 171, 0.2) !important;
+  --normal-text: #E9CFE8 !important;
+  --success-bg: rgba(226, 28, 112, 0.15) !important;
+  --success-border: rgba(249, 102, 171, 0.3) !important;
+  --success-text: #F966AB !important;
+  --error-bg: rgba(255, 75, 110, 0.12) !important;
+}
+
+/* â”€â”€â”€ Dialog/Modal backdrop â”€â”€â”€ */
+[data-radix-dialog-overlay],
+[data-overlay] {
+  background: rgba(25, 27, 55, 0.85) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* â”€â”€â”€ Table alternating rows â”€â”€â”€ */
+tr:nth-child(even) {
+  background: rgba(249, 102, 171, 0.03);
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   LIGHT MODE â€” Paksa semua teks jelas & kontras
+
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE — Teks gelap agar terbaca di background pink-putih
+   Aturan: HANYA override warna teks, tidak mengubah background
+   ══════════════════════════════════════════════════════════ */
+
+/* Semua class text-white → burgundy */
+:root:not(.dark) .text-white,
+:root:not(.dark) [class~="text-white"] { color: #5c0a30 !important; }
+
+:root:not(.dark) .text-white\/80, :root:not(.dark) .text-white\/70,
+:root:not(.dark) .text-white\/60, :root:not(.dark) .text-white\/55 {
+  color: #9d174d !important; opacity: 1 !important;
+}
+:root:not(.dark) .text-white\/50, :root:not(.dark) .text-white\/45,
+:root:not(.dark) .text-white\/40, :root:not(.dark) .text-white\/35,
+:root:not(.dark) .text-white\/30 {
+  color: #be185d !important; opacity: 1 !important;
+}
+
+/* Inline style color override */
+:root:not(.dark) [style*="color: #F2F2F2"],
+:root:not(.dark) [style*="color:#F2F2F2"],
+:root:not(.dark) [style*="color: #E9CFE8"],
+:root:not(.dark) [style*="color:#E9CFE8"],
+:root:not(.dark) [style*="color: white"],
+:root:not(.dark) [style*="color: #ffffff"] { color: #5c0a30 !important; }
+
+/* rgba transparan → gelap */
+:root:not(.dark) [style*="rgba(242,242,242,0.8)"],
+:root:not(.dark) [style*="rgba(242,242,242,0.7)"],
+:root:not(.dark) [style*="rgba(242,242,242,0.9)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.8)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.7)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.9)"] { color: #5c0a30 !important; }
+
+:root:not(.dark) [style*="rgba(242,242,242,0.6)"],
+:root:not(.dark) [style*="rgba(242,242,242,0.5)"],
+:root:not(.dark) [style*="rgba(242,242,242,0.4)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.6)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.5)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.4)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.45)"] { color: #9d174d !important; }
+
+:root:not(.dark) [style*="rgba(242,242,242,0.3)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.3)"],
+:root:not(.dark) [style*="rgba(233,207,232,0.35)"],
+:root:not(.dark) [style*="rgba(242,242,242,0.2)"] { color: #be185d !important; }
+
+/* Heading */
+:root:not(.dark) h1, :root:not(.dark) h2,
+:root:not(.dark) h3, :root:not(.dark) h4 { color: #5c0a30 !important; }
+
+/* Body text */
+:root:not(.dark) p { color: #7f1d4b; }
+
+/* Label, muted */
+:root:not(.dark) label { color: #5c0a30 !important; }
+:root:not(.dark) .text-muted-foreground { color: #9d174d !important; }
+
+/* Semantic classes */
+:root:not(.dark) .db-heading, :root:not(.dark) .db-subheading,
+:root:not(.dark) .ov-heading, :root:not(.dark) .ov-card-title,
+:root:not(.dark) .landing-h1, :root:not(.dark) .landing-h2,
+:root:not(.dark) .section-heading, :root:not(.dark) .auth-heading,
+:root:not(.dark) .weaver-brand, :root:not(.dark) .dash-brand { color: #5c0a30 !important; }
+
+:root:not(.dark) .db-muted, :root:not(.dark) .ov-muted,
+:root:not(.dark) .landing-sub, :root:not(.dark) .landing-muted,
+:root:not(.dark) .landing-p, :root:not(.dark) .section-sub,
+:root:not(.dark) .auth-body, :root:not(.dark) .db-activity-text,
+:root:not(.dark) .dash-nav-link, :root:not(.dark) .dash-username { color: #9d174d !important; }
+
+:root:not(.dark) .auth-footer-text, :root:not(.dark) .hero-social-proof,
+:root:not(.dark) .landing-muted, :root:not(.dark) .dash-nav-muted,
+:root:not(.dark) .db-activity-project { color: #be185d !important; }
+
+:root:not(.dark) .db-activity-actor { color: #5c0a30 !important; }
+:root:not(.dark) .landing-card-title, :root:not(.dark) .feature-title { color: #5c0a30 !important; }
+:root:not(.dark) .landing-card-desc, :root:not(.dark) .feature-desc { color: #9d174d !important; }
+
+/* Auth feature */
+:root:not(.dark) .auth-feature-label { color: #9d174d !important; }
+:root:not(.dark) .auth-heading { color: #5c0a30 !important; }
+:root:not(.dark) .auth-body { color: #7f1d4b !important; }
+
+/* Input */
+:root:not(.dark) input, :root:not(.dark) textarea, :root:not(.dark) select {
+  color: #5c0a30 !important;
+  background-color: #ffffff !important;
+  border-color: rgba(226, 28, 112, 0.2) !important;
+}
+:root:not(.dark) input::placeholder, :root:not(.dark) textarea::placeholder {
+  color: rgba(157,23,77,0.45) !important;
+}
+
+/* F966AB → E21C70 */
+:root:not(.dark) [style*="color: #F966AB"],
+:root:not(.dark) [style*="color:#F966AB"] { color: #E21C70 !important; }
+
+/* BF0413 → E21C70 */
+:root:not(.dark) [style*="color: #BF0413"],
+:root:not(.dark) [style*="color:#BF0413"] { color: #E21C70 !important; }
+
+/* ── Workspace Tab Nav CSS Variables ── */
+.dark {
+  --ws-tab-active-bg: #BF0413;
+  --ws-tab-active-shadow: 0 0 12px rgba(191,4,19,0.5);
+  --ws-tab-inactive-bg: rgba(191,4,19,0.08);
+  --ws-tab-inactive-border: rgba(191,4,19,0.2);
+  --ws-tab-inactive-color: rgba(242,242,242,0.7);
+}
+:root:not(.dark) {
+  --ws-tab-active-bg: #E21C70;
+  --ws-tab-active-shadow: 0 0 12px rgba(226,28,112,0.4);
+  --ws-tab-inactive-bg: rgba(226,28,112,0.07);
+  --ws-tab-inactive-border: rgba(226,28,112,0.2);
+  --ws-tab-inactive-color: #9b2626;
+}
+
+/* ── Canvas visibility: z-index ── */
+:root:not(.dark) header { z-index: 30 !important; }
+:root:not(.dark) .dash-header { z-index: 50 !important; }
+:root:not(.dark) .dash-footer { z-index: 50 !important; }
+:root:not(.dark) main { background: rgba(255,249,252,0.55) !important; }
+:root:not(.dark) .dash-layout { background: transparent !important; }
+:root:not(.dark) .auth-layout-bg { background: transparent !important; }
+
+/* ── Dark mode Spider-Man text ── */
+.dark .db-heading, .dark .ov-heading, .dark .ov-card-title,
+.dark .landing-h1, .dark .landing-h2, .dark .section-heading,
+.dark .auth-heading, .dark .weaver-brand, .dark .dash-brand,
+.dark .db-activity-actor, .dark .landing-card-title,
+.dark .feature-title { color: #F2F2F2 !important; }
+
+.dark .db-muted, .dark .ov-muted, .dark .landing-sub,
+.dark .landing-muted, .dark .landing-p, .dark .section-sub,
+.dark .auth-body, .dark .db-activity-text, .dark .dash-nav-link,
+.dark .dash-nav-muted, .dark .dash-username,
+.dark .db-activity-project, .dark .landing-card-desc,
+.dark .feature-desc { color: rgba(242,242,242,0.6) !important; }
+
+/* Dark mode Spider-Man backgrounds */
+.dark body, .dark .dash-layout {
+  background: radial-gradient(ellipse at 20% 10%, #3d0808 0%, #1a0808 40%, #0d0303 100%) !important;
+}
+.dark .dash-header {
+  background: rgba(18,5,5,0.96) !important;
+  border-bottom-color: rgba(191,4,19,0.2) !important;
+}
+.dark .dash-footer {
+  background: rgba(18,5,5,0.97) !important;
+  border-top-color: rgba(191,4,19,0.15) !important;
+}
+.dark .ov-card, .dark .db-main-card, .dark .db-project-card,
+.dark .feature-card, .dark .landing-feature-card {
+  background: rgba(31,11,11,0.85) !important;
+  border-color: rgba(191,4,19,0.2) !important;
+}
+.dark .ov-card-btn { background: rgba(191,4,19,0.1) !important; border-color: rgba(191,4,19,0.2) !important; color: #F2F2F2 !important; }
+.dark .db-action-btn { background: rgba(191,4,19,0.1) !important; border-color: rgba(191,4,19,0.2) !important; color: #F2F2F2 !important; }
+.dark .ov-card-divider { border-top-color: rgba(191,4,19,0.12) !important; }
+.dark .ov-progress-bg { background: rgba(191,4,19,0.12) !important; }
+.dark .db-activity-header { border-bottom-color: rgba(191,4,19,0.15) !important; }
+.dark .db-timeline-line { background: rgba(191,4,19,0.1) !important; }
+.dark .db-timeline-dot { background: rgba(191,4,19,0.2) !important; color: #BF0413 !important; }
+.dark .weaver-tagline { color: rgba(191,4,19,0.8) !important; }
+.dark input, .dark textarea, .dark select {
+  background: rgba(191,4,19,0.07) !important;
+  border-color: rgba(191,4,19,0.2) !important;
+  color: #F2F2F2 !important;
+}
+.dark .landing-features-section { background: rgba(26,8,8,0.6) !important; }
+.dark .landing-badge { background: rgba(31,11,11,0.85) !important; border-color: rgba(191,4,19,0.25) !important; }
+.dark .auth-layout-bg { background: radial-gradient(ellipse at 15% 30%, #3d0808 0%, #1a0808 50%, #0d0303 100%) !important; }
+.dark ::-webkit-scrollbar-track { background: #0d0303; }
+.dark ::-webkit-scrollbar-thumb { background: rgba(191,4,19,0.35); }
+.dark [style*="linear-gradient(135deg, #AE0849"] { background: linear-gradient(135deg, #590202, #BF0413) !important; }
+
+/* ══════════════════════════════════════════════════════════
+   CARD BORDER — Pertebal border di Light & Dark Mode
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Light mode: border pink 2px + shadow halus ── */
+:root:not(.dark) .ov-card {
+  border: 2px solid rgba(226,28,112,0.35) !important;
+  box-shadow: 0 2px 16px rgba(226,28,112,0.12), 0 0 0 1px rgba(226,28,112,0.08) !important;
+}
+:root:not(.dark) .ov-card:hover {
+  border-color: rgba(226,28,112,0.6) !important;
+  box-shadow: 0 6px 24px rgba(226,28,112,0.18), 0 0 0 1px rgba(226,28,112,0.15) !important;
+}
+
+:root:not(.dark) .db-main-card {
+  border: 2px solid rgba(226,28,112,0.3) !important;
+  box-shadow: 0 2px 20px rgba(226,28,112,0.1) !important;
+}
+
+:root:not(.dark) .db-project-card {
+  border: 2px solid rgba(226,28,112,0.28) !important;
+  box-shadow: 0 2px 12px rgba(226,28,112,0.1) !important;
+}
+:root:not(.dark) .db-project-card:hover {
+  border-color: rgba(226,28,112,0.55) !important;
+  box-shadow: 0 6px 20px rgba(226,28,112,0.16) !important;
+}
+
+:root:not(.dark) .db-action-btn {
+  border: 2px solid rgba(226,28,112,0.3) !important;
+  box-shadow: 0 1px 6px rgba(226,28,112,0.08) !important;
+}
+
+:root:not(.dark) .feature-card,
+:root:not(.dark) .landing-feature-card {
+  border: 2px solid rgba(226,28,112,0.3) !important;
+  box-shadow: 0 2px 14px rgba(226,28,112,0.1) !important;
+}
+
+:root:not(.dark) .ov-ai-badge,
+:root:not(.dark) .ov-deadline-item,
+:root:not(.dark) .ov-member-chip {
+  border: 1.5px solid rgba(226,28,112,0.25) !important;
+}
+
+/* ── Dark mode: border merah Spider-Man 2px ── */
+.dark .ov-card {
+  border: 2px solid rgba(191,4,19,0.35) !important;
+  box-shadow: 0 2px 16px rgba(89,2,2,0.25), 0 0 0 1px rgba(191,4,19,0.1) !important;
+}
+.dark .ov-card:hover {
+  border-color: rgba(191,4,19,0.6) !important;
+  box-shadow: 0 6px 28px rgba(140,3,3,0.3) !important;
+}
+
+.dark .db-main-card {
+  border: 2px solid rgba(191,4,19,0.3) !important;
+  box-shadow: 0 2px 20px rgba(89,2,2,0.2) !important;
+}
+
+.dark .db-project-card {
+  border: 2px solid rgba(191,4,19,0.28) !important;
+  box-shadow: 0 2px 12px rgba(89,2,2,0.2) !important;
+}
+.dark .db-project-card:hover {
+  border-color: rgba(191,4,19,0.55) !important;
+  box-shadow: 0 6px 24px rgba(140,3,3,0.28) !important;
+}
+
+.dark .db-action-btn {
+  border: 2px solid rgba(191,4,19,0.3) !important;
+  box-shadow: 0 1px 6px rgba(89,2,2,0.15) !important;
+}
+
+.dark .feature-card,
+.dark .landing-feature-card {
+  border: 2px solid rgba(191,4,19,0.3) !important;
+  box-shadow: 0 2px 14px rgba(89,2,2,0.2) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CARD BORDER BOLD — Pertebal border lebih solid & jelas
+   ══════════════════════════════════════════════════════════ */
+
+/* Light mode — border pink bold 2.5px */
+:root:not(.dark) .ov-card {
+  border: 2.5px solid #f9a8d4 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 4px 20px rgba(236,72,153,0.15), 0 1px 4px rgba(236,72,153,0.1) !important;
+  background: rgba(255,255,255,0.92) !important;
+}
+:root:not(.dark) .ov-card:hover {
+  border-color: #f472b6 !important;
+  box-shadow: 0 8px 32px rgba(236,72,153,0.22) !important;
+  transform: translateY(-2px) !important;
+}
+
+:root:not(.dark) .db-main-card {
+  border: 2.5px solid #f9a8d4 !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 4px 24px rgba(236,72,153,0.12) !important;
+  background: rgba(255,255,255,0.95) !important;
+}
+
+:root:not(.dark) .db-project-card {
+  border: 2px solid #f9a8d4 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 3px 14px rgba(236,72,153,0.12) !important;
+  background: rgba(255,255,255,0.95) !important;
+}
+:root:not(.dark) .db-project-card:hover {
+  border-color: #f472b6 !important;
+  box-shadow: 0 6px 22px rgba(236,72,153,0.2) !important;
+}
+
+:root:not(.dark) .db-action-btn {
+  border: 2px solid #f9a8d4 !important;
+  border-radius: 0.875rem !important;
+  box-shadow: 0 2px 8px rgba(236,72,153,0.1) !important;
+}
+:root:not(.dark) .db-action-btn:hover {
+  border-color: #f472b6 !important;
+}
+
+:root:not(.dark) .feature-card,
+:root:not(.dark) .landing-feature-card {
+  border: 2px solid #f9a8d4 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 3px 16px rgba(236,72,153,0.12) !important;
+  background: rgba(255,255,255,0.92) !important;
+}
+:root:not(.dark) .feature-card:hover,
+:root:not(.dark) .landing-feature-card:hover {
+  border-color: #f472b6 !important;
+  box-shadow: 0 8px 28px rgba(236,72,153,0.2) !important;
+}
+
+/* Dark mode — border merah crimson bold */
+.dark .ov-card {
+  border: 2.5px solid rgba(191,4,19,0.5) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 4px 20px rgba(89,2,2,0.3), 0 0 0 1px rgba(191,4,19,0.12) !important;
+}
+.dark .ov-card:hover {
+  border-color: rgba(191,4,19,0.8) !important;
+  box-shadow: 0 8px 32px rgba(140,3,3,0.35) !important;
+}
+
+.dark .db-main-card {
+  border: 2.5px solid rgba(191,4,19,0.45) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 4px 24px rgba(89,2,2,0.25) !important;
+}
+
+.dark .db-project-card {
+  border: 2px solid rgba(191,4,19,0.4) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 3px 14px rgba(89,2,2,0.25) !important;
+}
+.dark .db-project-card:hover {
+  border-color: rgba(191,4,19,0.7) !important;
+  box-shadow: 0 6px 24px rgba(140,3,3,0.32) !important;
+}
+
+.dark .db-action-btn {
+  border: 2px solid rgba(191,4,19,0.4) !important;
+  border-radius: 0.875rem !important;
+}
+
+.dark .feature-card,
+.dark .landing-feature-card {
+  border: 2px solid rgba(191,4,19,0.4) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 3px 16px rgba(89,2,2,0.22) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE — Card solid (tidak tembus background)
+   ══════════════════════════════════════════════════════════ */
+
+:root:not(.dark) .ov-card,
+:root:not(.dark) .db-main-card,
+:root:not(.dark) .db-project-card,
+:root:not(.dark) .feature-card,
+:root:not(.dark) .landing-feature-card,
+:root:not(.dark) .db-action-btn,
+:root:not(.dark) .ov-ai-badge,
+:root:not(.dark) .ov-member-chip,
+:root:not(.dark) .ov-deadline-item {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Dark mode card tetap solid gelap */
+.dark .ov-card,
+.dark .db-main-card,
+.dark .db-project-card,
+.dark .feature-card,
+.dark .landing-feature-card {
+  background: #1f0b0b !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE — Fix button visibility (bukan card)
+   ══════════════════════════════════════════════════════════ */
+
+/* Action buttons (New project, Invite, Adminland) */
+:root:not(.dark) .db-action-btn {
+  background: #ffffff !important;
+  border: 2px solid #f9a8d4 !important;
+  color: #9d174d !important;
+  box-shadow: 0 2px 8px rgba(236,72,153,0.1) !important;
+  backdrop-filter: none !important;
+}
+:root:not(.dark) .db-action-btn:hover {
+  background: #fff0f6 !important;
+  border-color: #f472b6 !important;
+  color: #E21C70 !important;
+}
+:root:not(.dark) .db-action-btn svg { color: #E21C70 !important; }
+
+/* Card buttons (+ Buat Pesan Baru, Kelola Papan Kanban, dll) */
+:root:not(.dark) .ov-card-btn {
+  background: #fff0f6 !important;
+  border: 2px solid #f9a8d4 !important;
+  color: #E21C70 !important;
+  font-weight: 600 !important;
+  backdrop-filter: none !important;
+}
+:root:not(.dark) .ov-card-btn:hover {
+  background: #ffe4f0 !important;
+  border-color: #f472b6 !important;
+}
+
+/* Primary gradient buttons tetap pink */
+:root:not(.dark) a[style*="linear-gradient(135deg, #AE0849"],
+:root:not(.dark) button[style*="linear-gradient(135deg, #AE0849"],
+:root:not(.dark) [style*="linear-gradient(135deg, #AE0849"] {
+  background: linear-gradient(135deg, #E21C70, #F966AB) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(226,28,112,0.3) !important;
+}
+
+/* Logout button */
+:root:not(.dark) .dash-logout-btn {
+  background: #fff0f6 !important;
+  border: 2px solid #f9a8d4 !important;
+  color: #9d174d !important;
+}
+:root:not(.dark) .dash-logout-btn:hover {
+  background: #ffe4f0 !important;
+  color: #E21C70 !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   OV-CARD-BTN — CTA Button yang jelas di semua card
+   ══════════════════════════════════════════════════════════ */
+
+/* Base dark mode */
+.ov-card-btn {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0.625rem 1rem !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  border-radius: 0.625rem !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  /* Dark mode: merah Spider-Man */
+  background: rgba(191,4,19,0.15) !important;
+  border: 1.5px solid rgba(191,4,19,0.45) !important;
+  color: #F2F2F2 !important;
+  box-shadow: 0 2px 8px rgba(89,2,2,0.2) !important;
+}
+.ov-card-btn:hover {
+  background: rgba(191,4,19,0.28) !important;
+  border-color: rgba(191,4,19,0.7) !important;
+  box-shadow: 0 4px 14px rgba(140,3,3,0.3) !important;
+  transform: translateY(-1px) !important;
+  color: #ffffff !important;
+}
+
+/* Light mode: pink bold */
+:root:not(.dark) .ov-card-btn {
+  background: linear-gradient(135deg, #fff0f6, #ffe4f0) !important;
+  border: 2px solid #f9a8d4 !important;
+  color: #be185d !important;
+  box-shadow: 0 2px 10px rgba(236,72,153,0.15) !important;
+  font-size: 0.8125rem !important;
+  padding: 0.625rem 1rem !important;
+}
+:root:not(.dark) .ov-card-btn:hover {
+  background: linear-gradient(135deg, #fce7f3, #fbcfe8) !important;
+  border-color: #f472b6 !important;
+  color: #9d174d !important;
+  box-shadow: 0 4px 16px rgba(236,72,153,0.25) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   KANBAN PAGE — Rich board cards like screenshot
+   ══════════════════════════════════════════════════════════ */
+
+/* Header */
+.kanban-header { border-bottom: 1px solid rgba(191,4,19,0.2); background: transparent; }
+:root:not(.dark) .kanban-header { border-bottom-color: rgba(226,28,112,0.15) !important; }
+
+/* Breadcrumb */
+.kanban-breadcrumb { color: rgba(242,242,242,0.5); }
+.kanban-breadcrumb:hover { color: #BF0413; }
+:root:not(.dark) .kanban-breadcrumb { color: #9d174d !important; }
+:root:not(.dark) .kanban-breadcrumb:hover { color: #E21C70 !important; }
+
+/* Title & text */
+.kanban-title   { color: #F2F2F2; }
+.kanban-sub     { color: rgba(242,242,242,0.55); }
+:root:not(.dark) .kanban-title { color: #3d0808 !important; }
+:root:not(.dark) .kanban-sub   { color: #9d174d !important; }
+
+/* Badges */
+.kanban-badge-active {
+  background: rgba(5,150,105,0.15);
+  border: 1px solid rgba(5,150,105,0.35);
+  color: #34d399;
+}
+.kanban-badge {
+  background: rgba(191,4,19,0.1);
+  border: 1px solid rgba(191,4,19,0.2);
+  color: rgba(242,242,242,0.7);
+}
+:root:not(.dark) .kanban-badge-active {
+  background: rgba(5,150,105,0.1) !important;
+  border-color: rgba(5,150,105,0.3) !important;
+  color: #059669 !important;
+}
+:root:not(.dark) .kanban-badge {
+  background: rgba(226,28,112,0.08) !important;
+  border-color: rgba(226,28,112,0.2) !important;
+  color: #9d174d !important;
+}
+
+/* Stat cards */
+.kanban-stat-card {
+  background: rgba(31,11,11,0.6);
+  border: 1px solid rgba(191,4,19,0.25);
+}
+.kanban-stat-value { color: #F2F2F2; }
+.kanban-stat-label { color: rgba(242,242,242,0.5); }
+:root:not(.dark) .kanban-stat-card {
+  background: #ffffff !important;
+  border: 2px solid #f9a8d4 !important;
+  box-shadow: 0 2px 10px rgba(236,72,153,0.1) !important;
+}
+:root:not(.dark) .kanban-stat-value { color: #3d0808 !important; }
+:root:not(.dark) .kanban-stat-label { color: #9d174d !important; }
+
+/* Search */
+.kanban-search {
+  background: rgba(31,11,11,0.5);
+  border: 1px solid rgba(191,4,19,0.25);
+  min-width: 160px;
+}
+.kanban-search-icon { color: rgba(242,242,242,0.4); }
+.kanban-search-placeholder { color: rgba(242,242,242,0.35); }
+:root:not(.dark) .kanban-search {
+  background: #ffffff !important;
+  border: 2px solid #f9a8d4 !important;
+}
+:root:not(.dark) .kanban-search-icon { color: #be185d !important; }
+:root:not(.dark) .kanban-search-placeholder { color: rgba(157,23,77,0.4) !important; }
+
+/* Board cards */
+.kanban-board-card {
+  background: #1f0b0b;
+  border: 2px solid rgba(191,4,19,0.3);
+  box-shadow: 0 3px 14px rgba(89,2,2,0.22);
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.kanban-board-card:hover {
+  border-color: rgba(191,4,19,0.6);
+  box-shadow: 0 8px 28px rgba(140,3,3,0.3);
+  transform: translateY(-3px);
+}
+:root:not(.dark) .kanban-board-card {
+  background: #ffffff !important;
+  border: 2px solid #f9a8d4 !important;
+  box-shadow: 0 3px 14px rgba(236,72,153,0.1) !important;
+}
+:root:not(.dark) .kanban-board-card:hover {
+  border-color: #f472b6 !important;
+  box-shadow: 0 8px 28px rgba(236,72,153,0.18) !important;
+}
+
+/* Progress bar bg */
+.kanban-progress-bg { background: rgba(191,4,19,0.15); }
+:root:not(.dark) .kanban-progress-bg { background: rgba(226,28,112,0.1) !important; }
+
+/* Avatar ring */
+.kanban-avatar-ring { border-color: #1f0b0b; }
+:root:not(.dark) .kanban-avatar-ring { border-color: #ffffff !important; }
+.kanban-avatar-extra {
+  background: rgba(191,4,19,0.2);
+  color: rgba(242,242,242,0.8);
+}
+:root:not(.dark) .kanban-avatar-extra {
+  background: rgba(226,28,112,0.1) !important;
+  color: #E21C70 !important;
+}
+
+/* Buka Board button */
+.kanban-board-btn {
+  background: rgba(191,4,19,0.12);
+  border: 1.5px solid rgba(191,4,19,0.4);
+  color: #F2F2F2;
+}
+.kanban-board-btn:hover {
+  background: rgba(191,4,19,0.25);
+  border-color: rgba(191,4,19,0.7);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+:root:not(.dark) .kanban-board-btn {
+  background: linear-gradient(135deg, #fff0f6, #ffe4f0) !important;
+  border: 2px solid #f9a8d4 !important;
+  color: #be185d !important;
+}
+:root:not(.dark) .kanban-board-btn:hover {
+  background: linear-gradient(135deg, #fce7f3, #fbcfe8) !important;
+  border-color: #f472b6 !important;
+  color: #9d174d !important;
+}
+
+/* Empty state */
+.kanban-empty {
+  border-color: rgba(191,4,19,0.2);
+  background: rgba(31,11,11,0.3);
+}
+:root:not(.dark) .kanban-empty {
+  border-color: rgba(226,28,112,0.2) !important;
+  background: rgba(255,240,248,0.5) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   WEAVER DESIGN SYSTEM — Unified card classes
+   Satu sistem untuk SEMUA card di seluruh aplikasi
+   ══════════════════════════════════════════════════════════ */
+
+/* CSS Variables untuk mode dark & light */
+.dark, :root {
+  --weaver-card-bg:      #1f0b0b;
+  --weaver-card-border:  rgba(191,4,19,0.35);
+  --weaver-card-shadow:  0 3px 14px rgba(89,2,2,0.2);
+  --weaver-card-title:   #F2F2F2;
+  --weaver-card-sub:     rgba(242,242,242,0.55);
+  --weaver-card-divider: rgba(191,4,19,0.12);
+  --weaver-progress-bg:  rgba(191,4,19,0.12);
+  --weaver-accent:       #BF0413;
+  --weaver-dropdown-bg:  #1f0b0b;
+  --weaver-dropdown-border: rgba(191,4,19,0.3);
+}
+:root:not(.dark) {
+  --weaver-card-bg:      #ffffff;
+  --weaver-card-border:  #f9a8d4;
+  --weaver-card-shadow:  0 3px 14px rgba(236,72,153,0.1);
+  --weaver-card-title:   #3d0808;
+  --weaver-card-sub:     #9d174d;
+  --weaver-card-divider: rgba(236,72,153,0.12);
+  --weaver-progress-bg:  rgba(226,28,112,0.1);
+  --weaver-accent:       #E21C70;
+  --weaver-dropdown-bg:  #ffffff;
+  --weaver-dropdown-border: rgba(226,28,112,0.2);
+}
+
+/* ── Base card ── */
+.weaver-card {
+  background: var(--weaver-card-bg) !important;
+  border: 2px solid var(--weaver-card-border) !important;
+  box-shadow: var(--weaver-card-shadow) !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1) !important;
+}
+.weaver-card:hover {
+  border-color: var(--weaver-accent) !important;
+  box-shadow: 0 8px 28px rgba(191,4,19,0.22) !important;
+  transform: translateY(-2px) !important;
+}
+:root:not(.dark) .weaver-card:hover {
+  box-shadow: 0 8px 28px rgba(236,72,153,0.18) !important;
+}
+
+/* ── Text ── */
+.weaver-card-title { color: var(--weaver-card-title) !important; }
+.weaver-card-sub   { color: var(--weaver-card-sub) !important; }
+
+/* ── Divider ── */
+.weaver-card-divider { border-top: 1px solid var(--weaver-card-divider) !important; }
+
+/* ── Progress bar bg ── */
+.weaver-progress-bg { background: var(--weaver-progress-bg) !important; }
+
+/* ── Dropdown ── */
+.weaver-dropdown {
+  background: var(--weaver-dropdown-bg) !important;
+  border: 1px solid var(--weaver-dropdown-border) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+}
+
+/* ── Kanban columns override — konsisten dengan weaver-card ── */
+.dark .weaver-kanban-col {
+  background: rgba(31,11,11,0.5) !important;
+  border-color: rgba(191,4,19,0.2) !important;
+}
+:root:not(.dark) .weaver-kanban-col {
+  background: rgba(255,240,248,0.5) !important;
+  border-color: rgba(226,28,112,0.15) !important;
+}
+
+/* ── Override card-hover dengan weaver ── */
+.card-hover.weaver-card { /* handled above */ }
+
+/* Ensure ov-card, db-* cards juga gunakan weaver style */
+.ov-card, .db-main-card, .db-project-card,
+.feature-card, .landing-feature-card,
+.kanban-board-card {
+  background: var(--weaver-card-bg) !important;
+  border: 2px solid var(--weaver-card-border) !important;
+  box-shadow: var(--weaver-card-shadow) !important;
+}
+.ov-card:hover, .db-project-card:hover,
+.feature-card:hover, .landing-feature-card:hover,
+.kanban-board-card:hover {
+  border-color: var(--weaver-accent) !important;
+  box-shadow: 0 8px 28px rgba(191,4,19,0.22) !important;
+  transform: translateY(-2px) !important;
+}
+:root:not(.dark) .ov-card:hover, :root:not(.dark) .db-project-card:hover,
+:root:not(.dark) .feature-card:hover, :root:not(.dark) .landing-feature-card:hover,
+:root:not(.dark) .kanban-board-card:hover {
+  box-shadow: 0 8px 28px rgba(236,72,153,0.18) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   WEAVER DIALOG / FORM — Konsisten dengan tema
+   ══════════════════════════════════════════════════════════ */
+
+.dark, :root {
+  --weaver-dialog-bg:      #1a0808;
+  --weaver-dialog-border:  rgba(191,4,19,0.3);
+  --weaver-label-color:    rgba(242,242,242,0.85);
+  --weaver-label-opt:      rgba(242,242,242,0.4);
+  --weaver-input-bg:       rgba(191,4,19,0.07);
+  --weaver-input-border:   rgba(191,4,19,0.25);
+  --weaver-input-color:    #F2F2F2;
+  --weaver-hint-color:     rgba(242,242,242,0.4);
+  --weaver-form-divider:   rgba(191,4,19,0.12);
+}
+:root:not(.dark) {
+  --weaver-dialog-bg:      #ffffff;
+  --weaver-dialog-border:  rgba(226,28,112,0.15);
+  --weaver-label-color:    #5c0a30;
+  --weaver-label-opt:      #be185d;
+  --weaver-input-bg:       #ffffff;
+  --weaver-input-border:   rgba(226,28,112,0.25);
+  --weaver-input-color:    #3d0808;
+  --weaver-hint-color:     #9d174d;
+  --weaver-form-divider:   rgba(226,28,112,0.12);
+}
+
+.weaver-dialog [data-radix-dialog-content],
+.weaver-dialog {
+  background: var(--weaver-dialog-bg) !important;
+  border: 1px solid var(--weaver-dialog-border) !important;
+}
+
+.weaver-dialog-title { color: var(--weaver-card-title) !important; }
+
+.weaver-label {
+  color: var(--weaver-label-color) !important;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.weaver-label-opt {
+  color: var(--weaver-label-opt) !important;
+  font-weight: 400;
+}
+
+.weaver-input {
+  background: var(--weaver-input-bg) !important;
+  border-color: var(--weaver-input-border) !important;
+  color: var(--weaver-input-color) !important;
+}
+.weaver-input:focus {
+  border-color: var(--weaver-accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--weaver-accent) 15%, transparent) !important;
+}
+.weaver-input::placeholder { color: var(--weaver-label-opt) !important; }
+
+.weaver-hint { color: var(--weaver-hint-color) !important; }
+
+.weaver-form-divider {
+  border-top: 1px solid var(--weaver-form-divider) !important;
+  padding-top: 0.5rem;
+}
+
+.weaver-btn-primary {
+  background: var(--weaver-accent) !important;
+  color: #ffffff !important;
+  border: none !important;
+  transition: opacity 0.15s, transform 0.15s !important;
+}
+.weaver-btn-primary:hover { opacity: 0.85 !important; transform: translateY(-1px) !important; }
+.weaver-btn-primary:disabled { opacity: 0.5 !important; }
+
+.weaver-btn-outline {
+  background: transparent !important;
+  border: 1px solid var(--weaver-input-border) !important;
+  color: var(--weaver-label-color) !important;
+}
+.weaver-btn-outline:hover {
+  background: color-mix(in srgb, var(--weaver-accent) 8%, transparent) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BOARD PAGE — Kanban konsisten light & dark
+   ══════════════════════════════════════════════════════════ */
+
+/* Page background */
+.board-page-bg { background: var(--background); min-height: 100%; }
+
+/* Breadcrumb */
+.board-breadcrumb { color: var(--weaver-accent); opacity: 0.75; }
+.board-breadcrumb:hover { opacity: 1; }
+
+/* Status dot colors — shared */
+.board-dot-todo     { background: #94a3b8; }
+.board-dot-progress { background: #fbbf24; }
+.board-dot-done     { background: #22c55e; }
+
+/* Column summary pills */
+.board-col-pill      { background: var(--weaver-card-bg); border: 1.5px solid var(--weaver-card-border); }
+.board-col-pill-text { color: var(--weaver-card-title); }
+.board-col-pill-count { color: var(--weaver-card-sub); }
+
+/* Column header text */
+.board-col-todo-text     { color: var(--weaver-card-sub); }
+.board-col-progress-text { color: #fbbf24; }
+.board-col-done-text     { color: #22c55e; }
+
+/* Count badge */
+.board-count-badge {
+  background: var(--weaver-progress-bg);
+  color: var(--weaver-card-sub);
+}
+
+/* Filter + search bar */
+.board-filter, .board-search {
+  background: var(--weaver-card-bg);
+  border: 1.5px solid var(--weaver-card-border);
+}
+.board-filter-text, .board-search-placeholder { color: var(--weaver-card-sub); }
+.board-search-icon { color: var(--weaver-card-sub); }
+
+/* Kanban columns */
+.board-col-todo {
+  background: var(--weaver-progress-bg);
+  border-color: var(--weaver-card-border);
+}
+.board-col-in_progress {
+  background: rgba(251,191,36,0.06);
+  border-color: rgba(251,191,36,0.2);
+}
+.board-col-done {
+  background: rgba(34,197,94,0.05);
+  border-color: rgba(34,197,94,0.18);
+}
+.board-col-over {
+  border-color: var(--weaver-accent) !important;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--weaver-accent) 20%, transparent) !important;
+}
+
+/* Empty state */
+.board-empty-stroke       { stroke: var(--weaver-card-sub); }
+.board-empty-fill         { fill: var(--weaver-card-sub); }
+.board-empty-stroke-accent { stroke: var(--weaver-accent); }
+.board-empty-fill-accent  { fill: var(--weaver-accent); }
+.board-empty-stroke-done  { stroke: #22c55e; }
+.board-empty-title        { color: var(--weaver-card-title); }
+.board-empty-sub          { color: var(--weaver-card-sub); }
+
+/* Add task button */
+.board-add-btn {
+  background: var(--weaver-accent);
+  color: #ffffff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--weaver-accent) 35%, transparent);
+}
+.board-add-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.board-add-bottom {
+  color: var(--weaver-card-sub);
+  border-color: var(--weaver-card-border);
+  background: transparent;
+}
+.board-add-bottom:hover {
+  color: var(--weaver-accent);
+  border-color: var(--weaver-accent);
+  background: color-mix(in srgb, var(--weaver-accent) 5%, transparent);
+}
+
+/* ══════════════════════════════════════════════════════════
+   AUTH LAYOUT — Panel solid background (canvas tidak tembus)
+   ══════════════════════════════════════════════════════════ */
+
+/* Left panel — background solid agar canvas tidak tembus */
+.auth-left-panel {
+  background: rgba(26, 5, 16, 0.92) !important;
+  border-right: 1px solid rgba(249,102,171,0.1);
+  backdrop-filter: none !important;
+}
+:root:not(.dark) .auth-left-panel {
+  background: rgba(255, 240, 248, 0.96) !important;
+  border-right-color: rgba(226,28,112,0.15) !important;
+}
+
+/* Right panel — background solid */
+.auth-right-panel {
+  background: rgba(20, 5, 14, 0.88) !important;
+  backdrop-filter: none !important;
+}
+:root:not(.dark) .auth-right-panel {
+  background: rgba(255, 245, 252, 0.95) !important;
+}
+
+/* Feature cards solid */
+:root:not(.dark) .auth-feature-card {
+  background: rgba(255,255,255,0.85) !important;
+  border: 1px solid rgba(226,28,112,0.2) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   AUTH PANEL — Force solid background (siang & malam)
+   ══════════════════════════════════════════════════════════ */
+
+/* Dark mode */
+html.dark .auth-left-panel,
+html.dark .auth-right-panel { backdrop-filter: none !important; }
+
+html.dark .auth-left-panel  { background: rgba(26,5,16,0.95) !important; }
+html.dark .auth-right-panel { background: rgba(20,5,14,0.92) !important; }
+
+/* Light mode — paksa solid pink-white, TIDAK transparan */
+html:not(.dark) .auth-left-panel {
+  background: #fff5fb !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html:not(.dark) .auth-right-panel {
+  background: #fff0f8 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Auth layout wrapper juga solid */
+html:not(.dark) .auth-layout-bg {
+  background: linear-gradient(160deg, #fff9fc 0%, #ffe4f0 50%, #fce7f3 100%) !important;
+}
+
+/* Feature cards */
+html:not(.dark) .auth-feature-card {
+  background: rgba(255,255,255,0.95) !important;
+  border: 1.5px solid rgba(226,28,112,0.2) !important;
+  box-shadow: 0 2px 8px rgba(226,28,112,0.06) !important;
+}
+
+/* Login/register form container solid */
+html:not(.dark) .auth-right-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* CSS variables untuk auth panel background */
+html.dark {
+  --auth-panel-left:  rgba(26,5,16,0.97);
+  --auth-panel-right: rgba(20,5,14,0.95);
+}
+html:not(.dark) {
+  --auth-panel-left:  #fff5fb;
+  --auth-panel-right: #fff0f8;
+}
+
+/* ── landing-secondary-btn light mode — tambah container ── */
+html:not(.dark) .landing-secondary-btn {
+  background: rgba(255,255,255,0.85) !important;
+  border: 2px solid rgba(226,28,112,0.35) !important;
+  color: #be185d !important;
+  box-shadow: 0 2px 12px rgba(226,28,112,0.12) !important;
+}
+html:not(.dark) .landing-secondary-btn:hover {
+  background: #ffffff !important;
+  border-color: rgba(226,28,112,0.6) !important;
+  color: #E21C70 !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DASHBOARD SIDEBAR — Left navigation
+   ══════════════════════════════════════════════════════════ */
+
+.sidebar-container {
+  width: 220px;
+  min-width: 220px;
+  flex-direction: column;
+  border-right: 1px solid rgba(191,4,19,0.2);
+  background: rgba(18,5,5,0.97);
+  backdrop-filter: none;
+}
+:root:not(.dark) .sidebar-container {
+  background: #fff5fb !important;
+  border-right-color: rgba(226,28,112,0.15) !important;
+}
+
+/* Nav item */
+.sidebar-nav-item { user-select: none; }
+
+.sidebar-nav-active {
+  background: rgba(191,4,19,0.2);
+  color: #F2F2F2;
+  border: 1px solid rgba(191,4,19,0.4);
+}
+:root:not(.dark) .sidebar-nav-active {
+  background: rgba(226,28,112,0.12) !important;
+  color: #E21C70 !important;
+  border-color: rgba(226,28,112,0.3) !important;
+}
+
+.sidebar-nav-inactive {
+  color: rgba(242,242,242,0.6);
+  border: 1px solid transparent;
+}
+.sidebar-nav-inactive:hover {
+  background: rgba(191,4,19,0.1);
+  color: #F2F2F2;
+}
+:root:not(.dark) .sidebar-nav-inactive {
+  color: #9d174d !important;
+}
+:root:not(.dark) .sidebar-nav-inactive:hover {
+  background: rgba(226,28,112,0.07) !important;
+  color: #E21C70 !important;
+}
+
+/* Section label */
+.sidebar-section-label { color: rgba(242,242,242,0.35); }
+:root:not(.dark) .sidebar-section-label { color: #be185d !important; }
+
+/* User section */
+.sidebar-user-section {
+  border-top: 1px solid rgba(191,4,19,0.15);
+}
+:root:not(.dark) .sidebar-user-section {
+  border-top-color: rgba(226,28,112,0.12) !important;
+}
+
+.sidebar-user-card {
+  background: rgba(191,4,19,0.08);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sidebar-user-card:hover { background: rgba(191,4,19,0.15); }
+:root:not(.dark) .sidebar-user-card {
+  background: rgba(226,28,112,0.07) !important;
+}
+:root:not(.dark) .sidebar-user-card:hover {
+  background: rgba(226,28,112,0.12) !important;
+}
+
+.sidebar-user-name { color: #F2F2F2; }
+.sidebar-user-icon { color: rgba(242,242,242,0.4); }
+:root:not(.dark) .sidebar-user-name { color: #3d0808 !important; }
+:root:not(.dark) .sidebar-user-icon { color: #be185d !important; }
+
+/* Footer bottom bar offset */
+@media (min-width: 768px) {
+  .dash-footer-offset { left: 220px !important; }
+}
