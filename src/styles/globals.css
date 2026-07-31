@@ -1793,18 +1793,7 @@ html:not(.dark) .mobile-nav-inactive { color: #be185d; }
     gap: 12px !important;
   }
 
-  /* 8. Tab nav workspace — scroll horizontal */
-  nav.flex.items-center.flex-wrap.gap-1\.5.pb-3 {
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    padding-bottom: 8px !important;
-    gap: 6px !important;
-  }
-  nav.flex.items-center.flex-wrap.gap-1\.5.pb-3::-webkit-scrollbar {
-    display: none !important;
-  }
+  /* 8. Tab nav workspace — handled by .ws-tab-nav class */
 
   /* 9. Workspace kanban page — hide search bar di mobile */
   .kanban-search { display: none !important; }
@@ -1901,4 +1890,153 @@ input[type="date"], textarea { cursor: text !important; }
 
   /* Input lebih besar di mobile */
   input, select, textarea { font-size: 16px !important; } /* Prevent zoom on iOS */
+}
+
+/* ── Dashboard page header border ── */
+.db-page-header-border { border-color: var(--weaver-card-border); }
+
+/* ══════════════════════════════════════════════════════════
+   WORKSPACE TAB NAV — Horizontal scroll, rapi di mobile
+   ══════════════════════════════════════════════════════════ */
+
+/* Wrapper dengan gradient fade di kanan */
+.ws-tab-wrapper {
+  position: relative;
+  margin-bottom: 4px;
+}
+.ws-tab-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 4px;
+  width: 40px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--background, #1a0808));
+}
+
+/* Nav scroll */
+.ws-tab-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+  padding-right: 40px; /* ruang untuk fade */
+}
+.ws-tab-nav::-webkit-scrollbar { display: none; }
+
+/* Tab item */
+.ws-tab-item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.4;
+}
+
+/* Active state */
+.ws-tab-active {
+  background: var(--weaver-accent, #BF0413) !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--weaver-accent, #BF0413) 40%, transparent);
+}
+
+/* Inactive state */
+.ws-tab-inactive {
+  background: rgba(191,4,19,0.08);
+  border: 1px solid rgba(191,4,19,0.2);
+  color: rgba(242,242,242,0.7);
+}
+.ws-tab-inactive:hover {
+  background: rgba(191,4,19,0.15);
+  color: rgba(242,242,242,0.9);
+}
+
+/* Light mode */
+:root:not(.dark) .ws-tab-wrapper::after {
+  background: linear-gradient(to right, transparent, var(--background, #fff0f6));
+}
+:root:not(.dark) .ws-tab-inactive {
+  background: rgba(226,28,112,0.07);
+  border-color: rgba(226,28,112,0.2);
+  color: #9d174d;
+}
+:root:not(.dark) .ws-tab-inactive:hover {
+  background: rgba(226,28,112,0.12);
+  color: #E21C70;
+}
+
+/* ── Activity feed mobile fix ── */
+@media (max-width: 767px) {
+  /* Pastikan kolom activity tidak terpotong */
+  .lg\:col-span-2 {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Teks activity tidak terpotong */
+  .db-activity-text,
+  .db-activity-actor,
+  .db-activity-project {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Activity card full width */
+  .weaver-card .space-y-4 {
+    width: 100% !important;
+  }
+
+  /* Flex item tidak overflow */
+  .weaver-card .flex.items-start.gap-3 {
+    min-width: 0 !important;
+  }
+  .weaver-card .flex.items-start.gap-3 > .flex-1 {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/* ── Dashboard aktivitas terbaru mobile fix ── */
+@media (max-width: 1023px) {
+  /* Paksa grid 5 kolom jadi 1 kolom di bawah lg */
+  .grid.grid-cols-1.lg\:grid-cols-5 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Kolom aktivitas full width */
+  .lg\:col-span-3,
+  .lg\:col-span-2 {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Card aktivitas tidak terpotong */
+  .lg\:col-span-2 .weaver-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Teks di dalam card tidak sempit */
+  .lg\:col-span-2 .weaver-card p,
+  .lg\:col-span-2 .weaver-card span {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
 }
