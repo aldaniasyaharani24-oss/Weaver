@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
-import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { getUserWorkspaces } from "@/features/workspace/services/workspace.service";
 import { LogoutButton } from "@/features/auth/components/logout-button";
+import { ChangePasswordForm } from "@/features/auth/components/change-password-form";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -47,13 +47,14 @@ export default async function SettingsPage() {
         </p>
       </div>
 
-      {/* Profil */}
+      {/* Profil Saya */}
       <div style={cardStyle}>
         <h2 className="text-sm font-bold mb-4" style={{ color: "#F966AB" }}>Profil Saya</h2>
         <div className="flex items-center gap-4">
           {avatarUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={avatarUrl} alt={fullName} className="size-16 rounded-full object-cover ring-2" style={{ borderColor: "rgba(249,102,171,0.3)" }} />
+            <img src={avatarUrl} alt={fullName} className="size-16 rounded-full object-cover ring-2"
+              style={{ borderColor: "rgba(249,102,171,0.3)" }} />
           ) : (
             <div className="size-16 rounded-full flex items-center justify-center text-xl font-bold text-white shrink-0"
               style={{ background: "linear-gradient(135deg, #AE0849, #E21C70)" }}>
@@ -91,35 +92,12 @@ export default async function SettingsPage() {
         </div>
       </div>
 
-      {/* Navigasi cepat */}
-      <div style={cardStyle}>
-        <h2 className="text-sm font-bold mb-4" style={{ color: "#F966AB" }}>Navigasi</h2>
-        <div className="space-y-2">
-          {[
-            { href: "/dashboard", label: "Beranda",   icon: "M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" },
-            { href: "/workspaces", label: "Workspace", icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" },
-            { href: "/my-tasks",   label: "My Tasks",  icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
-            { href: "/schedule",   label: "Jadwal",    icon: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" },
-          ].map(item => (
-            <Link key={item.href} href={item.href}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all hover:opacity-80"
-              style={{ background: "rgba(249,102,171,0.05)", border: "1px solid rgba(249,102,171,0.08)" }}>
-              <svg className="size-4 shrink-0" style={{ color: "#F966AB" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-              </svg>
-              <span className="text-sm font-medium" style={{ color: "#E9CFE8" }}>{item.label}</span>
-              <svg className="size-3.5 ml-auto shrink-0" style={{ color: "rgba(233,207,232,0.3)" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </Link>
-          ))}
-        </div>
-      </div>
-
       {/* Akun */}
       <div style={cardStyle}>
         <h2 className="text-sm font-bold mb-4" style={{ color: "#F966AB" }}>Akun</h2>
         <div className="space-y-3">
+
+          {/* Email */}
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium" style={{ color: "#E9CFE8" }}>Email</p>
@@ -130,6 +108,19 @@ export default async function SettingsPage() {
               Terverifikasi
             </span>
           </div>
+
+          {/* Sandi */}
+          <div className="flex items-center justify-between" style={{ borderTop: "1px solid rgba(249,102,171,0.08)", paddingTop: "0.75rem" }}>
+            <div>
+              <p className="text-sm font-medium" style={{ color: "#E9CFE8" }}>Sandi Akun</p>
+              <p className="text-xs mt-0.5" style={{ color: "rgba(233,207,232,0.4)" }}>••••••••</p>
+            </div>
+          </div>
+
+          {/* Form ganti sandi */}
+          <ChangePasswordForm />
+
+          {/* Logout */}
           <div style={{ borderTop: "1px solid rgba(249,102,171,0.08)", paddingTop: "0.75rem" }}>
             <LogoutButton />
           </div>
