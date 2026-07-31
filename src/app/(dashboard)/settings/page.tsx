@@ -110,11 +110,11 @@ export default async function SettingsPage() {
           </div>
 
           {/* Sandi */}
-          <div className="flex items-center justify-between" style={{ borderTop: "1px solid rgba(249,102,171,0.08)", paddingTop: "0.75rem" }}>
-            <div>
-              <p className="text-sm font-medium" style={{ color: "#E9CFE8" }}>Sandi Akun</p>
-              <p className="text-xs mt-0.5" style={{ color: "rgba(233,207,232,0.4)" }}>••••••••</p>
-            </div>
+          <div style={{ borderTop: "1px solid rgba(249,102,171,0.08)", paddingTop: "0.75rem" }}>
+            <p className="text-sm font-medium" style={{ color: "#E9CFE8" }}>Sandi Akun</p>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(233,207,232,0.4)" }}>
+              Sandi tersimpan aman dan tidak dapat ditampilkan
+            </p>
           </div>
 
           {/* Form ganti sandi */}
