@@ -65,8 +65,7 @@ export default async function DashboardPage() {
   const activities = await getAllActivities(workspaces.map((w) => w.id), 8).catch(() => []);
   const firstWorkspaceId = workspaces[0]?.id || "";
 
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? "Selamat pagi" : hour < 17 ? "Selamat siang" : "Selamat malam";
+  const greeting = "Selamat datang";
 
   return (
     <div className="min-h-full">
